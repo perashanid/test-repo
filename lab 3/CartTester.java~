@@ -1,0 +1,110 @@
+//task 7
+
+class Cart {
+  
+  public String item ;
+  
+  public double cost;
+  
+  //public int count=0;
+  
+  public String name;
+  
+  public double discount = 0;
+  
+  
+  
+  public double total =0;
+  
+  String [] items = new String [3];
+  
+  double [] costs = new double [3];
+  
+  int index =0;
+  
+  
+  
+  
+  
+  public void create_cart(int x){
+    
+    this.name="cart " + x ;
+    
+  }
+  
+  
+  public void addItem(String i , double c){
+    
+   
+    
+    if(index<3){
+   this.item = i;
+    this.cost=c;
+    this.total+=c;
+    System.out.println("you have " + (index+1) + " item(s) in your cart now.");
+    System.out.println(item + "added to " + this.name);
+   items[index]=item;
+   costs[index]=cost;
+   index++;
+   
+  }
+    else{
+      System.out.println("You already have 3 items on your cart");
+    }
+  }
+  
+  public void addItem( double c,String i){
+    
+   
+    
+    if(index<3){
+   this.item = i;
+    this.cost=c;
+    this.total+=c;
+    System.out.println("you have " + (index+1) + " item(s) in your cart now.");
+    System.out.println(item + " added to " + this.name);
+    
+      items[index]=item;
+   costs[index]=cost;
+   index++;
+    
+    
+  }
+    else{
+      System.out.println("You already have 3 items on your cart");
+    }
+  }
+  
+  
+  public void cartDetails(){
+    System.out.println("your " + this.name);
+    
+    for(int i =0;i<index;i++){
+      System.out.println( items[i] + " - " + costs[i]);}
+    
+    System.out.println("discount applied : " + discount + " % ");
+    if(discount>0){
+      System.out.println( "total price : " + ( total*discount- total ));}
+    else{
+       System.out.println( "total price : " + ( total ));}
+      
+                     
+     
+ 
+    
+    
+  }
+
+
+ public void giveDiscount(int d ){
+   
+   this.discount=d;
+   
+   
+ }
+}
+ 
+
+  
+  
+  
